@@ -1,4 +1,9 @@
 import styled from "styled-components";
+
+interface SideNavProps {
+  show: boolean;
+}
+
 export const S_Builder = styled.div`
   background-color: ${(p) => p.theme.bg_color};
   height: 100vh;
@@ -30,14 +35,15 @@ export const S_Builder = styled.div`
   }
 `;
 
-export const WidgetSideNav = styled.aside`
+export const WidgetSideNav = styled.aside<SideNavProps>`
   position: fixed;
   /* padding: 20px; */
   height: 100vh;
   width: 40em;
-  background-color: ${p => p.theme.fg_color};
+  background-color: ${p => p.theme.accent_color};
   z-index: 70;
   top: 0;
+  left: ${p => !p.show ? '-50em': '0'};
 `;
 
 
