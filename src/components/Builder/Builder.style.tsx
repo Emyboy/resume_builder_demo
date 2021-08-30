@@ -20,11 +20,13 @@ export const S_Builder = styled.div`
   }
   .builder-body {
     background-color: white;
+    border-radius: 10px;
+    border: 2px solid ${(p) => p.theme.accent_color};
   }
   nav {
     padding: 20px;
     background-color: ${(p) => p.theme.fg_color};
-    border: 0.07px solid ${p => p.theme.accent_color};
+    border: 0.07px solid ${(p) => p.theme.accent_color};
     display: flex;
     justify-content: space-between;
     width: 60%;

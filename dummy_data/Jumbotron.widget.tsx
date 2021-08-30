@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import Toolbar from "../src/components/Toolbar/Toolbar";
 import { JumbotronType } from "../src/components/Widgets/Jumbotron/Jombotron.type";
 
 interface Props {
@@ -17,6 +18,9 @@ export default function JumbotronWidget({widget_data}: Props): ReactElement {
           Example button
         </button>
       </div>
+      <Toolbar>
+        <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, corrupti doloribus inventore nisi quae sapiente quisquam cum perspiciatis autem nesciunt vero error! Veritatis nihil aliquid recusandae commodi repellat nulla ex.</p>
+      </Toolbar>
     </div>
   );
 }

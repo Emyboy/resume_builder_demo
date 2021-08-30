@@ -12,7 +12,6 @@ interface Props {
 const WidgetWrapper = styled.div`
   :hover {
     border: 5px dotted pink;
-    /* width: fit-content; */
   }
 `;
 
