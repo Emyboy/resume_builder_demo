@@ -7,12 +7,13 @@ interface Props {
 
 const ToolbarWrapper = styled.aside`
   position: fixed;
-  right: 30px;
+  right: 2%;
   top: 40px;
-  width: 450px;
+  width: 23%;
   height: 90vh;
+  z-index: 50;
   div {
-    border: 1px solid ${(p) => p.theme.accent_color};
+    padding: 5px;
   }
 `;
 

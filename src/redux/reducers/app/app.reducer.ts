@@ -7,7 +7,6 @@ const initialState: AppReducerTypes = {
 export default (state = initialState, { type, payload }: AppActionTypes) => {
   switch (type) {
     case "SET_APP_STATE":
-      console.log('index ---', payload)
       return { ...state, ...payload };
     case "SET_TOOLS_INDEX":
       return {

@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from "react";
+import InputField from "../src/components/Toolbar/EachTool/InputField/InputField";
 import { JumbotronType } from "../src/components/Widgets/Jumbotron/Jombotron.type";
 import WidgetWrapper from "../src/components/Widgets/WidgetWrapper/WidgetWrapper";
 import { withToolkit } from "../src/components/withToolkit/withToolkit";
@@ -14,26 +15,26 @@ function JumbotronWidget(props: Props): ReactElement {
     <WidgetWrapper
       index={widget_data.index}
       toolkit={
-        <p className="text-white">
-          <h2 className="text-white">Jumbotron</h2>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-          corrupti doloribus inventore nisi quae sapiente quisquam cum
-          perspiciatis autem nesciunt vero error! Veritatis nihil aliquid
-          recusandae commodi repellat nulla ex.
-        </p>
+        <div>
+          <h2 className="text-white">{widget_data.display_name}</h2>
+          <p className="text-accent">{widget_data.description}</p>
+          <InputField
+            onChange={() => {}}
+            label="Heading Text"
+            defaultValue={widget_data.heading}
+          />
+        </div>
       }
     >
-        <div
-          className="p-5 mb-4 bg-light rounded-3"
-        >
-          <div className="container-fluid py-5">
-            <h1 className="display-5 fw-bold">{widget_data.heading}</h1>
-            <p className="col-md-8 fs-4">{widget_data.sub_heading}</p>
-            <button className="btn btn-primary btn-lg" type="button">
-              Example button
-            </button>
-          </div>
+      <div className="p-5 mb-4 bg-light rounded-3">
+        <div className="container-fluid py-5">
+          <h1 className="display-5 fw-bold">{widget_data.heading}</h1>
+          <p className="col-md-8 fs-4">{widget_data.sub_heading}</p>
+          <button className="btn btn-primary btn-lg" type="button">
+            Example button
+          </button>
         </div>
+      </div>
     </WidgetWrapper>
   );
 }

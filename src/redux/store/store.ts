@@ -11,7 +11,7 @@ const store = configureStore(loadedState);
 
 store.subscribe(() => {
     saveState({
-        builder: store.getState().builder
+        app: store.getState().app
     })
 });
 

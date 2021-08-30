@@ -7,8 +7,11 @@ export default {
     display: "flex",
     flexDirection: "row",
   },
+  display_name: 'Default Jumbotron',
+  description: "This is used for display stuff at the top, like in into",
   heading: "Welcome to my blog",
-  sub_heading: "this is the sub heading sha, don't know what you think about it",
+  sub_heading:
+    "this is the sub heading sha, don't know what you think about it",
   heading_style: null,
   sub_heading_style: null,
   has_avatar: false,
