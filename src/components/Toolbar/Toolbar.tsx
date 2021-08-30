@@ -18,7 +18,7 @@ const ToolbarWrapper = styled.aside`
 
 export default function Toolbar({ children }: Props): ReactElement {
   return (
-    <ToolbarWrapper>
+    <ToolbarWrapper id='aside'>
       <div className="right-panel m-1 h-100 p-2">{children}</div>
     </ToolbarWrapper>
   );

@@ -2,6 +2,7 @@ import configureStore from './configure.store';
 import loadState from '../utils/loadState';
 import saveState from '../utils/saveState';
 import { BuilderStateTypes } from '../reducers/builder/builder.reducer.types';
+import { AppReducerTypes } from '../reducers/app/app.reducer.types';
 
 
 const loadedState = loadState();
@@ -15,7 +16,8 @@ store.subscribe(() => {
 });
 
 export interface StoreState {
-    builder: BuilderStateTypes
+    builder: BuilderStateTypes;
+    app: AppReducerTypes
 }
 
 export default store;

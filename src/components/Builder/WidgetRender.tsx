@@ -7,6 +7,7 @@ import JumbotronWidget from "../../../dummy_data/Jumbotron.widget";
 interface Props {
   type: string;
   widget_data: any;
+  onClick: () => void;
 }
 
 const WidgetWrapper = styled.div`
@@ -15,21 +16,31 @@ const WidgetWrapper = styled.div`
   }
 `;
 
-export default function WidgetRender({ type, widget_data }: Props): ReactElement {
+export default function WidgetRender({
+  type,
+  widget_data,
+  onClick
+}: Props): ReactElement {
+  const props = {
+    ...widget_data,
+    onClick
+  }
   const returnWidget = () => {
     switch (type) {
-        case 'jumbotron':
-          return <JumbotronWidget widget_data={widget_data} />
-        case 'heading':
-          return <HeadingWidget widget_data={widget_data} />
-        case 'card_with_img':
-          return <CardWithImgWidget widget_data={widget_data} />
-        default:
-            return <></>;
+      case "jumbotron":
+        return <JumbotronWidget widget_data={props} />;
+      case "heading":
+        return <HeadingWidget widget_data={props} />;
+      case "card_with_img":
+        return <CardWithImgWidget widget_data={props} />;
+      default:
+        return <></>;
     }
-  }
+  };
 
-  return <WidgetWrapper>
-    {returnWidget()}
-  </WidgetWrapper>
+  return (
+    <WidgetWrapper onClick={props.onClick} >
+      {returnWidget()}
+    </WidgetWrapper>
+  );
 }

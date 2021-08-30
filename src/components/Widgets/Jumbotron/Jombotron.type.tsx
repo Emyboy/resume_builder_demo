@@ -4,6 +4,7 @@ export interface JumbotronType {
   type: string;
   css: string;
   markup: string;
+  index: number;
   container_style: React.CSSProperties;
   heading: string;
   sub_heading: string;

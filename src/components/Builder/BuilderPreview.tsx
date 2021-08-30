@@ -4,15 +4,17 @@ import HeadingWidget from "../../../dummy_data/Heading.widget";
 import Button from "../Button/Button";
 import { WidgetSideNav } from "./Builder.style";
 import WidgetRender from "./WidgetRender";
+import { useDispatch } from "react-redux";
 
 interface Props {}
 
 export default function BuilderPreview({}: Props): ReactElement {
   const [showNav, setShowNav] = useState<boolean>(false);
+  const dispatch = useDispatch();
   const EachPreview = () => {
     return (
       <div
-        className="card bg-dark text-white m-1"
+        className="card text-white m-1"
         style={{
           height: "200px",
           width: "300px",
@@ -44,7 +46,20 @@ export default function BuilderPreview({}: Props): ReactElement {
         >
           <div>
             {dummy_builder_data.builder_data.map((val, i) => {
-              return <WidgetRender type={val.type} widget_data={val} />;
+              return (
+                <WidgetRender
+                  onClick={() => {
+                    console.log("CLICKED");
+                    dispatch({
+                      type: "SET_APP_STATE",
+                      payload: { toolsIndex: i },
+                    });
+                  }}
+                  type={val.type}
+                  widget_data={{ ...val, index: i }}
+                  key={i}
+                />
+              );
             })}
           </div>
 
