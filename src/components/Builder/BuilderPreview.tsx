@@ -42,7 +42,6 @@ export default function BuilderPreview({}: Props): ReactElement {
               return (
                 <WidgetRender
                   onClick={() => {
-                    console.log("CLICKED");
                     dispatch({
                       type: "SET_APP_STATE",
                       payload: { toolsIndex: i },

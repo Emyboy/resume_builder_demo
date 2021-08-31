@@ -12,5 +12,7 @@ export interface JumbotronType {
   heading_style: React.CSSProperties;
   sub_heading_style: React.CSSProperties;
   has_avatar: boolean;
+  avatar_style: React.CSSProperties;
+  body_style: React.CSSProperties;
   description: string;
 }

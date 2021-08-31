@@ -6,16 +6,14 @@ interface Props {
   htmlFor?: string;
 }
 
-export default function FormGroup({
+export default function EachToolWrapper({
   children,
   htmlFor,
   label,
 }: Props): ReactElement {
   return (
     <div className="form-group">
-      <label className="text-muted" htmlFor={htmlFor}>
-        {label}
-      </label>
+      <label className='text-muted' htmlFor={htmlFor}>{label}</label>
       {children}
     </div>
   );

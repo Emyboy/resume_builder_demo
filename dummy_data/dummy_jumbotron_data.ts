@@ -4,10 +4,14 @@ export default {
   css: "",
   markup: "",
   container_style: {
+    backgroundColor: "#e8e8e8",
+  },
+  body_style: {
     display: "flex",
     flexDirection: "row",
+    justifyContent: "center",
   },
-  display_name: 'Default Jumbotron',
+  display_name: "Default Jumbotron",
   description: "This is used for display stuff at the top, like in into",
   heading: "Welcome to my blog",
   sub_heading:
@@ -15,6 +19,10 @@ export default {
   heading_style: null,
   sub_heading_style: null,
   has_avatar: false,
+  avatar_url: null,
+  avatar_style: {
+    borderRadius: '50px'
+  }
 };
 
 export const CartWithImageDummy = {

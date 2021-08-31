@@ -4,7 +4,7 @@ import FormGroup from "../../../FormGroup/FormGroup";
 interface Props {
   label?: string;
   htmlFor?: string;
-  onChange: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: "password" | "number" | string;
   placeholder?: string;
   className?: string;
@@ -17,7 +17,7 @@ export default function InputField({
   onChange,
   type,
   placeholder,
-  defaultValue
+  defaultValue,
 }: Props): ReactElement {
   return (
     <FormGroup label={label} htmlFor={htmlFor}>
@@ -27,6 +27,7 @@ export default function InputField({
         id={htmlFor}
         placeholder={placeholder}
         defaultValue={defaultValue}
+        onChange={onChange}
       />
     </FormGroup>
   );
