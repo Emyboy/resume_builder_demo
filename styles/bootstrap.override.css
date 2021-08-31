@@ -1,3 +1,10 @@
-.border-bottom {
-    border-bottom: 1px solid #2a77c5!important;
+@import url(./variables.css);
+.ant-slider-handle {
+    margin-top: -2px;
+}
+.ant-switch {
+    background-color: var(--accent_color);
+}
+.ant-slider-track {
+    background-color: var(--accent_color);
 }

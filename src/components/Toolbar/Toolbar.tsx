@@ -11,7 +11,11 @@ const ToolbarWrapper = styled.aside`
   top: 40px;
   width: 23%;
   height: 90vh;
+  color: ${(p) => p.theme.accent_color};
   z-index: 50;
+  label {
+    color: #4c5f96;
+  }
   div {
     /* overflow-y: scroll; */
     padding: 5px;

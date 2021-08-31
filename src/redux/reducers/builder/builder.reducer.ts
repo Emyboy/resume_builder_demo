@@ -17,7 +17,7 @@ const initialState: BuilderStateTypes = {
   widget_list: [
     dummy_jumbotron_data,
     CartWithImageDummy,
-    { ...dummy_jumbotron_data, heading: "I'm the last Jumbotron I think, lol" },
+    dummy_jumbotron_data,
     CartWithImageDummy,
   ],
 };

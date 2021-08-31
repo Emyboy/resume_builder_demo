@@ -1,9 +1,9 @@
-import React, { ReactElement, useState, useEffect } from "react";
+import React, { ReactElement, useState } from "react";
 import Button from "../Button/Button";
 import { WidgetSideNav } from "./Builder.style";
 import WidgetRender from "./WidgetRender";
 import { useDispatch, useSelector } from "react-redux";
-import store, { StoreState } from "../../redux/store/store";
+import { StoreState } from "../../redux/store/store";
 
 interface Props {}
 
@@ -11,9 +11,7 @@ export default function BuilderPreview({}: Props): ReactElement {
   const [showNav, setShowNav] = useState<boolean>(false);
   const builder = useSelector((state: StoreState) => state.builder);
   const dispatch = useDispatch();
-  useEffect(() => {
-    console.log("LIST --", store.getState().builder);
-  }, []);
+  
   const EachPreview = () => {
     return (
       <div
@@ -31,8 +29,8 @@ export default function BuilderPreview({}: Props): ReactElement {
     );
   };
   return (
-    <div className="row h-100 justify-content-center">
-      <div className="h-100 col-9 mt-3">
+    <div className="row h-100 justify-content-start">
+      <div className="h-100 col-lg-9 col-sm-12 mt-3">
         <div
           className="builder-body m-1 shadow"
           style={{ overflow: "scroll", height: "92vh", overflowX: "hidden" }}
@@ -63,9 +61,9 @@ export default function BuilderPreview({}: Props): ReactElement {
         </div>
         <div></div>
       </div>
-      <div className="h-100 col-3 h-50">
+      {/* <div className="h-100 col-3 h-50">
         <div className="m-1 h-100"></div>
-      </div>
+      </div> */}
       <WidgetSideNav show={showNav}>
         <div style={{ height: "70px" }}>
           <h3 className="text-white p-3">Select Widgets</h3>

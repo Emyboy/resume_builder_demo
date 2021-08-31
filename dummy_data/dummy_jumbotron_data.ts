@@ -10,14 +10,14 @@ export default {
   },
   body_style: {
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
+    // flexDirection: "row",
+    // justifyContent: "center",
   },
   display_name: "Default Jumbotron",
   description: "This is used for display stuff at the top, like in into",
-  heading: "Welcome to my blog",
+  heading: "Title",
   sub_heading:
-    "this is the sub heading sha, don't know what you think about it",
+    "Sub Title",
   heading_style: null,
   sub_heading_style: null,
   has_avatar: true,

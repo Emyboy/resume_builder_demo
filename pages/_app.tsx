@@ -1,10 +1,11 @@
 import "../styles/bootstrap.min.css";
 import "../styles/global.css";
-import "../styles/bootstrap.override.css";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import store from "../src/redux/store/store";
 import { ThemeProvider } from "styled-components";
+import "antd/dist/antd.css";
+import "../styles/bootstrap.override.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = {

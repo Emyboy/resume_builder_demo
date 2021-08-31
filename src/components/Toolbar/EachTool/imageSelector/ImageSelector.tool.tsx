@@ -1,18 +1,22 @@
 import React, { ReactElement, useState, useEffect } from "react";
-import EachToolWrapperTool from "../EachToolWrapper/EachToolWrapper.tool";
 
-interface Props {}
+interface Props {
+  setImageFile: (file:any) => void;
+  disabled: boolean;
+}
 
-export default function ImageSelectorTool({}: Props): ReactElement {
-  const [isDisabled, setDisabled] = useState<boolean>(true);
-  useEffect(() => {
-    setDisabled(isDisabled);
-  }, [isDisabled]);
+export default function ImageSelectorTool({
+  setImageFile,
+  disabled
+}: Props): ReactElement {
   return (
-    <EachToolWrapperTool onDisable={(val) => setDisabled(val)} disabled={isDisabled}>
-      <div className="form-group">
-        <input type="file" disabled={isDisabled} />
-      </div>
-    </EachToolWrapperTool>
+    <div className="form-group">
+      <input
+        type="file"
+        accept="image/png, image/gif, image/jpeg"
+        onChange={(e) => setImageFile(e.target.files)}
+        disabled={disabled}
+      />
+    </div>
   );
 }
