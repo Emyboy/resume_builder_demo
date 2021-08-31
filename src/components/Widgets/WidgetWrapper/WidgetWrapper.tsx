@@ -14,6 +14,7 @@ export default function WidgetWrapper({
   toolkit,
   index
 }: Props): ReactElement {
+  const [showToolkit, setShowToolket] = useState(false);
   const app = useSelector((state: StoreState) => state.app);
   return (
     <div>

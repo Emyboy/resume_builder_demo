@@ -13,6 +13,7 @@ const ToolbarWrapper = styled.aside`
   height: 90vh;
   z-index: 50;
   div {
+    /* overflow-y: scroll; */
     padding: 5px;
   }
 `;

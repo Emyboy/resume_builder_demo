@@ -17,6 +17,7 @@ export const S_Builder = styled.div`
   .right-panel {
     background-color: ${(p) => p.theme.fg_color};
     border-radius: 20px;
+    overflow-y: scroll;
   }
   .builder-body {
     background-color: white;

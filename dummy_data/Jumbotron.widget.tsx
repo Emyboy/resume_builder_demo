@@ -1,10 +1,11 @@
 import React, { ReactElement, useState } from "react";
-import InputField from "../src/components/Toolbar/EachTool/InputField/InputField";
+import InputField from "../src/components/Toolbar/EachTool/InputField/InputField.tool";
 import { JumbotronType } from "../src/components/Widgets/Jumbotron/Jombotron.type";
 import WidgetWrapper from "../src/components/Widgets/WidgetWrapper/WidgetWrapper";
 import { withToolkit } from "../src/components/withToolkit/withToolkit";
 import { useDispatch } from "react-redux";
 import { updateWidgetData } from "../src/redux/actions/builder/builder.action";
+import ImageSelectorTool from "../src/components/Toolbar/EachTool/imageSelector/ImageSelector.tool";
 
 interface Props {
   widget_data: JumbotronType;
@@ -38,13 +39,14 @@ function JumbotronWidget(props: Props): ReactElement {
             label="Sub Heading Text"
             defaultValue={widget_data.sub_heading}
           />
+          <ImageSelectorTool />
         </div>
       }
     >
       <div className="p-5 mb-4 rounded-3" style={widget_data.container_style}>
         <div className="container-fluid py-5" style={widget_data.body_style}>
           {widget_data.has_avatar ? (
-            <div className="col-2 mt-4 mr-3">
+            <div className="col-lg-2 col-sm-12 mt-4">
               <img
                 className="shadow"
                 style={widget_data.avatar_style}
@@ -53,7 +55,7 @@ function JumbotronWidget(props: Props): ReactElement {
               />
             </div>
           ) : null}
-          <div className='w-100'>
+          <div className="col-lg-9 col-sm-12">
             <h1 className="display-5 fw-bold">{widget_data.heading}</h1>
             <p className="col-md-11 fs-4">{widget_data.sub_heading}</p>
             <button className="btn btn-primary btn-lg w-50" type="button">

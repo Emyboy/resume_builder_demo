@@ -1,5 +1,6 @@
 import "../styles/bootstrap.min.css";
 import "../styles/global.css";
+import "../styles/bootstrap.override.css";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import store from "../src/redux/store/store";
@@ -13,11 +14,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     theme_color: "#fe5cfb",
   };
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </Provider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
   );
 }
 export default MyApp;
