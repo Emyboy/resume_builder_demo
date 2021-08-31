@@ -28,6 +28,17 @@ function JumbotronWidget(props: Props): ReactElement {
     dispatch(updateWidgetData(editedData));
   };
 
+  const updateAvatarStyles = (key: string, value: string) => {
+    const editedData = {
+      ...data,
+      avatar_style: {
+        ...data.avatar_style,
+        [key]: value,
+      },
+    };
+    dispatch(updateWidgetData(editedData));
+  };
+
   useEffect(() => {
     const avatarUpdate = {
       ...data,
@@ -62,14 +73,20 @@ function JumbotronWidget(props: Props): ReactElement {
                 setImageFile={(file) => setAvatarFile(file[0])}
                 disabled={!addAvatar}
               />
-              <label>Image Width</label>
-              <Slider defaultValue={30} disabled={!addAvatar} />
+              <label>Image Roundness</label>
+              <Slider
+                defaultValue={30}
+                disabled={!addAvatar}
+                min={0}
+                max={50}
+                onChange={(e) => updateAvatarStyles('borderRadius', `${e}%`)}
+              />
             </>
           </EachToolWrapperTool>
         </div>
       }
     >
-      <div className="p-5 mb-4 rounded-3" style={widget_data.container_style}>
+      <div className="p-5 mb-4" style={widget_data.container_style}>
         <div className="container-fluid py-5" style={widget_data.body_style}>
           {widget_data.has_avatar ? (
             <div className="col-lg-3 col-sm-12 mt-4">

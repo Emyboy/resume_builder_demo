@@ -23,7 +23,7 @@ export default {
   has_avatar: true,
   avatar_url: null,
   avatar_style: {
-    borderRadius: '50px'
+    borderRadius: '0px'
   }
 };
 
